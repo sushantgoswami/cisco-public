@@ -1,0 +1,72 @@
+#!/bin/bash
+
+GSLBUSER=susgoswa
+
+echo "############ Below are the gslb list ############"
+echo " "
+echo "  ==============================="
+echo "  Felix GSLB's in Production"
+echo "  ==============================="
+echo " "
+echo "  Internal url handling"
+echo "  =========="
+echo " "
+echo "  1. alln01-sdx3-dci04n-cae-gslb1"
+echo "  2. rcdn9-sdx3-dci13n-cae-gslb1"
+echo "  3. rtp1-sdx7-dcm01n-cae-gslb1"
+echo " "
+echo "  External url handling"
+echo "  ============"
+echo " "
+echo "  4. rcdn9-ucs-dcz05n-cae-gslb3"
+echo "  5. alln01-ucs-dcz03n-cae-gslb3"
+echo "  6. rtp1-ucs-dcz01n-cae-gslb3"
+echo " "
+echo "  ================================"
+echo "  Felix GSLB's in Non-Production"
+echo "  ================================"
+echo " "
+echo "  7. alln01-sdx3-dci04n-cae-ngslb1"
+echo "  8. rcdn9-sdx3-dci13n-cae-ngslb1"
+echo "  9. rtp1-sdx7-dcm01n-cae-ngslb1"
+echo " "
+echo "  =============================="
+echo "############ Some help on url based search ###############"
+echo "=========================================================="
+echo "lb> show gslb vserver clfpws-cloudapps-bkup.iglb.cisco.com"
+echo "lb> show gslb service clfpws-cloudapps_clfpws-prod-int-alln_prd-alln"
+echo "lb> show monitor clfpws-cloudapps_clfpws-prod-int-alln_prd-alln"
+echo "############ Some help on url based search ###############"
+echo "=========================================================="
+echo "  =============================="
+
+read -p " Please select the number to connect: " selection
+
+if [ $selection == 1 ]; then
+ ssh -l $GSLBUSER alln01-sdx3-dci04n-cae-gslb1
+fi
+if [ $selection == 2 ]; then
+ ssh -l $GSLBUSER rcdn9-sdx3-dci13n-cae-gslb1
+fi
+if [ $selection == 3 ]; then
+ ssh -l $GSLBUSER rtp1-sdx7-dcm01n-cae-gslb1
+fi
+if [ $selection == 4 ]; then
+ ssh -l $GSLBUSER rcdn9-ucs-dcz05n-cae-gslb3
+fi
+if [ $selection == 5 ]; then
+ ssh -l $GSLBUSER alln01-ucs-dcz03n-cae-gslb3
+fi
+if [ $selection == 6 ]; then
+ ssh -l $GSLBUSER rtp1-ucs-dcz01n-cae-gslb3
+fi
+if [ $selection == 7 ]; then
+ ssh -l $GSLBUSER alln01-sdx3-dci04n-cae-ngslb1
+fi
+if [ $selection == 8 ]; then
+ ssh -l $GSLBUSER rcdn9-sdx3-dci13n-cae-ngslb1
+fi
+if [ $selection == 9 ]; then
+ ssh -l $GSLBUSER rtp1-sdx7-dcm01n-cae-ngslb1
+fi
+
